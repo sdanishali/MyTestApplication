@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>test</title>
-</head>
+    <head>
+        <title>test</title>
+    </head>
     <body>
         
-        <form name="input" action="TestPopup.aspx" method="POST">
+        <form id="inputForm" method="Post" action="http://IM2Dev/Edelweiss/BuyerEstimates" target="Popup_Window" onsubmit="target_popup()">
             <table style="width:27%">
                 <tr>                    
                     <td style="width:35%;">Ean: </td>
@@ -30,5 +30,11 @@
                 </tr>
             </table>
         </form> 
-    </body>
+    </body>    
 </html>
+
+<script type="text/javascript">
+    function target_popup() {        
+        window.open('', 'Popup_Window', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=1300,height=1000,left=10,top=10');
+    }
+</script>
