@@ -6,7 +6,7 @@
     </head>
     <body>
         
-        <form id="inputForm" method="Post" action="http://IM2Dev/Edelweiss/BuyerEstimates" target="Popup_Window" onsubmit="target_popup()">
+        <form id="inputForm" method="Post" action="http://IM2Dev/Edelweiss/BuyerEstimates" target="popupWindowTarget" onsubmit="popupwindow('', 'popupWindowTarget', 1200, 900)">
             <table style="width:27%">
                 <tr>                    
                     <td style="width:35%;">Ean: </td>
@@ -34,7 +34,31 @@
 </html>
 
 <script type="text/javascript">
-    function target_popup() {        
-        window.open('', 'Popup_Window', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=1300,height=1000,left=10,top=10');
-    }
+    function popupwindow(url, title, w, h) {
+        var left = (screen.width / 2) - (w / 2);
+        var top = 10;
+        return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    } 
+    
+//    function target_popup() {
+//        var params = [
+//            'toolbar=no',
+//            'scrollbars=yes',
+//            'location=no',
+//            'status=no',
+//            'menubar=no',
+//            'height=' + 9024,
+//            'width=' + 1180,
+//            'left=0',
+//            'top=0',
+//            'resizable=no'
+//        ].join(',');
+
+//        alert(screen.width);
+//        alert(screen.height - 1);
+//        
+//        window.open('', 'Popup_Window', params);
+//        
+//        //window.open('', 'Popup_Window', 'toolbar=no,scrollbars=yes,location=no,status=no,menubar=no,width=' + screen.width + ',height=' + screen.height + ',resizable=no');
+//    }
 </script>
