@@ -1,4 +1,0 @@
-MyTestApplication
-=================
-
-My Test Application
