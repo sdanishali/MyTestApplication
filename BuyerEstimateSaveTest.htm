@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>test</title>
+    </head>
+    <body>
+         <!--<form name="input" action="http://localhost:52935/BuyerEstimateSave" method="POST" target="popupWindowTarget" onsubmit="popupwindow('', 'popupWindowTarget', 400, 400)">-->
+        <!--<form name="input" action="/BuyerEstimateSave/SaveTitle" method="POST" target="popupWindowTarget" onsubmit="popupwindow('', 'popupWindowTarget', 400, 400)">-->
+        <form name="input" action="https://im2prx.bn-corp.com/BuyerEstimateSave" method="POST">
+            <h2>Buyer Estimate Save Test Page</h2>
+            <table style="width:35%">
+                <tr>
+                    <td>Ean: </td>
+                    <td><input type="text" name="ean" value="9780802797292" style="width: 150%"/></td>
+                </tr>
+                <tr>
+                    <td>Publisher Estimate: </td>
+                    <td><input type="text" name="publisherEstimate" value="250" style="width: 150%"/></td>
+                </tr>
+                <tr>
+                    <td>Shared Note: </td>
+                    <td><input type="text" name="sharedNote" value="Test Shared Note" style="width: 150%" /></td>
+                </tr>
+                <tr>
+                    <td>Promo Note: </td>
+                    <td><input type="text" name="promoNote" value="Test Promo Note" style="width: 150%"/></td>
+                </tr>
+                <tr>
+                    <td>Allocation Note: </td>
+                    <td><input type="text" name="allocationNote" value="Test Allocation Note" style="width: 150%"/></td>
+                </tr>
+                <tr>
+                    <td>Vendor Projections - Store: </td>
+                    <td><input type="text" name="vendorStoreForecast" value="{&quot;1&quot;:&quot;23&quot;,&quot;2&quot;:&quot;45&quot;,&quot;3&quot;:&quot;55&quot;,&quot;4&quot;:&quot;47&quot;,&quot;5&quot;:&quot;15&quot;,&quot;6&quot;:&quot;67&quot;,&quot;7&quot;:&quot;13&quot;,&quot;8&quot;:&quot;62&quot;,&quot;9&quot;:&quot;47&quot;,&quot;10&quot;:&quot;15&quot;,&quot;11&quot;:&quot;67&quot;,&quot;12&quot;:&quot;13&quot;,&quot;13&quot;:&quot;62&quot;}" style="width: 370%"/></td>
+                </tr>
+                <tr>
+                    <td>Vendor Projections - Internet: </td>
+                    <td><input type="text" name="vendorInternetForecast" value="{&quot;1&quot;:&quot;17&quot;,&quot;2&quot;:&quot;15&quot;,&quot;3&quot;:&quot;35&quot;,&quot;4&quot;:&quot;87&quot;,&quot;5&quot;:&quot;15&quot;,&quot;6&quot;:&quot;67&quot;,&quot;7&quot;:&quot;13&quot;,&quot;8&quot;:&quot;62&quot;,&quot;9&quot;:&quot;47&quot;,&quot;10&quot;:&quot;15&quot;,&quot;11&quot;:&quot;67&quot;,&quot;12&quot;:&quot;13&quot;,&quot;13&quot;:&quot;62&quot;}" style="width: 370%"/></td>
+                </tr>
+                <tr style="height: 200"></tr>
+                
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="submit" value="submit" style="width: 50%" /> </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+<script type="text/javascript">
+    function popupwindow(url, title, w, h) {
+        var left = (screen.width / 2) - (w / 2);
+        var top = 10;
+        return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }    
+</script>
