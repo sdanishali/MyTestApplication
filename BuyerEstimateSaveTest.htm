@@ -5,54 +5,389 @@
         <title>test</title>
     </head>
     <body>
-         <!--<form name="input" action="http://localhost:52935/BuyerEstimateSave" method="POST" target="popupWindowTarget" onsubmit="popupwindow('', 'popupWindowTarget', 400, 400)">-->
+        <!--<form name="input" action="http://localhost:52935/BuyerEstimateSave" method="POST" onsubmit="populatetitlesdata()">-->
         <!--<form name="input" action="/BuyerEstimateSave/SaveTitle" method="POST" target="popupWindowTarget" onsubmit="popupwindow('', 'popupWindowTarget', 400, 400)">-->
-        <form name="input" action="https://im2prx.bn-corp.com/BuyerEstimateSave" method="POST">
+        <form name="input" action="https://im2prx.bn-corp.com/BuyerEstimateSave" method="POST"  method="POST" onsubmit="populatetitlesdata()">
             <h2>Buyer Estimate Save Test Page</h2>
-            <table style="width:35%">
-                <tr>
-                    <td>Ean: </td>
-                    <td><input type="text" name="ean" value="9780802797292" style="width: 150%"/></td>
-                </tr>
-                <tr>
-                    <td>Publisher Estimate: </td>
-                    <td><input type="text" name="publisherEstimate" value="250" style="width: 150%"/></td>
-                </tr>
-                <tr>
-                    <td>Shared Note: </td>
-                    <td><input type="text" name="sharedNote" value="Test Shared Note" style="width: 150%" /></td>
-                </tr>
-                <tr>
-                    <td>Promo Note: </td>
-                    <td><input type="text" name="promoNote" value="Test Promo Note" style="width: 150%"/></td>
-                </tr>
-                <tr>
-                    <td>Allocation Note: </td>
-                    <td><input type="text" name="allocationNote" value="Test Allocation Note" style="width: 150%"/></td>
-                </tr>
-                <tr>
-                    <td>Vendor Projections - Store: </td>
-                    <td><input type="text" name="vendorStoreForecast" value="{&quot;1&quot;:&quot;23&quot;,&quot;2&quot;:&quot;45&quot;,&quot;3&quot;:&quot;55&quot;,&quot;4&quot;:&quot;47&quot;,&quot;5&quot;:&quot;15&quot;,&quot;6&quot;:&quot;67&quot;,&quot;7&quot;:&quot;13&quot;,&quot;8&quot;:&quot;62&quot;,&quot;9&quot;:&quot;47&quot;,&quot;10&quot;:&quot;15&quot;,&quot;11&quot;:&quot;67&quot;,&quot;12&quot;:&quot;13&quot;,&quot;13&quot;:&quot;62&quot;}" style="width: 370%"/></td>
-                </tr>
-                <tr>
-                    <td>Vendor Projections - Internet: </td>
-                    <td><input type="text" name="vendorInternetForecast" value="{&quot;1&quot;:&quot;17&quot;,&quot;2&quot;:&quot;15&quot;,&quot;3&quot;:&quot;35&quot;,&quot;4&quot;:&quot;87&quot;,&quot;5&quot;:&quot;15&quot;,&quot;6&quot;:&quot;67&quot;,&quot;7&quot;:&quot;13&quot;,&quot;8&quot;:&quot;62&quot;,&quot;9&quot;:&quot;47&quot;,&quot;10&quot;:&quot;15&quot;,&quot;11&quot;:&quot;67&quot;,&quot;12&quot;:&quot;13&quot;,&quot;13&quot;:&quot;62&quot;}" style="width: 370%"/></td>
-                </tr>
-                <tr style="height: 200"></tr>
+             <h3>First Item</h3>
+             <table style="width:35%">
+                 <tr>
+                     <td>Ean: </td>
+                     <td><input id="jean" type="text" name="ean" value="9780802797292" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Pattern Ean: </td>
+                     <td><input id="jpatternEAN" type="text" name="patternEAN" value="9780312428327" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Publisher Estimate: </td>
+                     <td><input id="jpublisherEstimate" type="text" name="publisherEstimate" value="250" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Shared Note: </td>
+                     <td><input id="jsharedNote" type="text" name="sharedNote" value="Test Shared Note" style="width: 150%" /></td>
+                 </tr>
+                 <tr>
+                     <td>Promo Note: </td>
+                     <td><input id="jpromoNote" type="text" name="promoNote" value="Test Promo Note" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Allocation Note: </td>
+                     <td><input id="jallocationNote" type="text" name="allocationNote" value="Test Allocation Note" style="width: 150%"/></td>
+                 </tr>
                 
-                <tr>
-                    <td></td>
-                    <td><input type="submit" name="submit" value="submit" style="width: 50%" /> </td>
-                </tr>
-            </table>
-        </form>
-    </body>
+                 <tr>
+                     <td>Buyer Comments: </td>
+                     <td><input id="jBuyerComments" type="text" name="buyerComments" value="Test Buyer Comments"  style="width: 150%" disabled/></td>
+                 </tr>
+                
+                 <tr>
+                     <td>Vendor Projections - Store: </td>
+                     <td><input type="text" name="vendorStoreForecast" value="15, 25, 27, 25, 30, 14, 24, 1, 5, 32, 24, 13, 11, 9, 7, 12, 15, 1, 4, 4, 2, 5, 9, 11, 15" style="width: 370%" disabled/></td>
+                 </tr>
+                 <tr>
+                     <td>Vendor Projections - Internet: </td>
+                     <td><input type="text" name="vendorInternetForecast" value="15, 25, 27, 25, 30, 14, 24, 1, 5, 32, 24, 13, 11, 9, 7, 12, 15, 1, 4, 4, 2, 5, 9, 11, 15" style="width: 370%" disabled/></td>
+                 </tr>
+
+                 <tr>
+                     <td></td>
+                     <td><input type="hidden" id="jnotes" name="notes" value="" /></td>
+                 </tr>
+                
+                 <tr>
+                     <td></td>
+                     <td><input type="hidden" id="jtitles" name="titles" value="" /></td>
+                 </tr>
+                
+             </table>
+             
+             <h3>Second Item</h3>
+             <table style="width:35%">
+                 <tr>
+                     <td>Ean: </td>
+                     <td><input id="jean2" type="text" name="ean2" value="9781594480003" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Pattern Ean: </td>
+                     <td><input id="jpatternEAN2" type="text" name="patternEAN2" value="9780590353427" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Publisher Estimate: </td>
+                     <td><input id="jpublisherEstimate2" type="text" name="publisherEstimate2" value="150" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Shared Note: </td>
+                     <td><input id="jsharedNote2" type="text" name="sharedNote2" value="Test Shared Note 2" style="width: 150%" /></td>
+                 </tr>
+                 <tr>
+                     <td>Promo Note: </td>
+                     <td><input id="jpromoNote2" type="text" name="promoNote2" value="Test Promo Note 2" style="width: 150%"/></td>
+                 </tr>
+                 <tr>
+                     <td>Allocation Note: </td>
+                     <td><input id="jallocationNote2" type="text" name="allocationNote2" value="Test Allocation Note 2" style="width: 150%"/></td>
+                 </tr>
+                
+                 <tr>
+                     <td>Buyer Comments: </td>
+                     <td><input id="jbuyerComments2" type="text" name="buyerComments2" value="Test Buyer Comments 2"  style="width: 150%" disabled/></td>
+                 </tr>
+                
+                 <tr>
+                     <td>Vendor Projections - Store: </td>
+                     <td><input type="text" name="vendorStoreForecast2" value="15, 25, 27, 25, 30, 14, 24, 1, 5, 32, 24, 13, 11, 9, 7, 12, 15, 1, 4, 4, 2, 5, 9, 11, 15" style="width: 370%" disabled/></td>
+                 </tr>
+                 <tr>
+                     <td>Vendor Projections - Internet: </td>
+                     <td><input type="text" name="vendorInternetForecast2" value="15, 25, 27, 25, 30, 14, 24, 1, 5, 32, 24, 13, 11, 9, 7, 12, 15, 1, 4, 4, 2, 5, 9, 11, 15" style="width: 370%" disabled/></td>
+                 </tr>
+                 
+                 <tr style="height: 200"></tr>
+                 
+                 <tr>
+                     <td></td>
+                     <td><input type="submit" name="submit" value="submit" style="width: 50%" /> </td>
+                 </tr>
+             </table>
+         </form>
+       </body>
 </html>
 
 <script type="text/javascript">
-    function popupwindow(url, title, w, h) {
-        var left = (screen.width / 2) - (w / 2);
-        var top = 10;
-        return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    function populatetitlesdata() {
+
+        // This is the new JSON format for Titles. 
+        
+        // Let's set titles
+        var jsonTitles = {
+            "titles": [
+                {
+                    "ean": "9780802797292",
+                    "patternEAN": "9780802797292",
+                    "publisherEstimate": "150",
+                    "budgetType": "",
+                    "budgetMonth": "",
+                    "estimate": {
+                        "isPrivate": true,
+                        "store": "",
+                        "eShop": "",
+                        "internetReserve": "",
+                        "buyerReserve": ""
+                    },
+                    "forecast": {
+                        "vendorStoreForecast": {
+                            "1": "15",
+                            "2": "25",
+                            "3": "27",
+                            "4": "25",
+                            "5": "30",
+                            "6": "14",
+                            "7": "24",
+                            "8": "1",
+                            "9": "5",
+                            "10": "32",
+                            "11": "24",
+                            "12": "13",
+                            "13": "11",
+                            "14": "9",
+                            "15": "7",
+                            "16": "12",
+                            "17": "15",
+                            "18": "1",
+                            "19": "4",
+                            "20": "4",
+                            "21": "2",
+                            "22": "5",
+                            "23": "9",
+                            "24": "11",
+                            "25": "15"
+                        },
+
+                        "vendorInternetForecast": {
+                            "1": "15",
+                            "2": "25",
+                            "3": "27",
+                            "4": "25",
+                            "5": "30",
+                            "6": "14",
+                            "7": "24",
+                            "8": "1",
+                            "9": "5",
+                            "10": "32",
+                            "11": "24",
+                            "12": "13",
+                            "13": "11",
+                            "14": "9",
+                            "15": "7",
+                            "16": "12",
+                            "17": "15",
+                            "18": "1",
+                            "19": "4",
+                            "20": "4",
+                            "21": "2",
+                            "22": "5",
+                            "23": "9",
+                            "24": "11",
+                            "25": "15"
+                        }
+                    },
+                    "notes": [
+                        {
+                            "type": "sharedNote",
+                            "text": "Test Note for the Best Laid Plans by john-bnb",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z",
+                            "auditEmail": "user@email.com"
+                        },
+                        {
+                            "type": "buyerComments",
+                            "text": "Buyer Comment note for sku: 034549119X",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z"
+                        },
+                        {
+                            "type": "promoNote",
+                            "text": "promo note for sku: 034549119X",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z"
+                        },
+                        {
+                            "type": "allocationNote",
+                            "text": "alloc note for sku: 034549119X",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z"
+                        }
+                    ]
+                    },
+
+                {
+                    "ean": "9780802797292",
+                    "patternEAN": "9780802797292",
+                    "publisherEstimate": "150",
+                    "budgetType": "",
+                    "budgetMonth": "",
+                    "estimate": {
+                        "isPrivate": true,
+                        "store": "",
+                        "eShop": "",
+                        "internetReserve": "",
+                        "buyerReserve": ""
+                    },
+                    "forecast": {
+                        "vendorStoreForecast": {
+                            "1": "15",
+                            "2": "25",
+                            "3": "27",
+                            "4": "25",
+                            "5": "30",
+                            "6": "14",
+                            "7": "24",
+                            "8": "1",
+                            "9": "5",
+                            "10": "32",
+                            "11": "24",
+                            "12": "13",
+                            "13": "11",
+                            "14": "9",
+                            "15": "7",
+                            "16": "12",
+                            "17": "15",
+                            "18": "1",
+                            "19": "4",
+                            "20": "4",
+                            "21": "2",
+                            "22": "5",
+                            "23": "9",
+                            "24": "11",
+                            "25": "15"
+                        },
+
+                        "vendorInternetForecast": {
+                            "1": "15",
+                            "2": "25",
+                            "3": "27",
+                            "4": "25",
+                            "5": "30",
+                            "6": "14",
+                            "7": "24",
+                            "8": "1",
+                            "9": "5",
+                            "10": "32",
+                            "11": "24",
+                            "12": "13",
+                            "13": "11",
+                            "14": "9",
+                            "15": "7",
+                            "16": "12",
+                            "17": "15",
+                            "18": "1",
+                            "19": "4",
+                            "20": "4",
+                            "21": "2",
+                            "22": "5",
+                            "23": "9",
+                            "24": "11",
+                            "25": "15"
+                        }
+                    },
+                    "notes": [
+                        {
+                            "type": "sharedNote",
+                            "text": "Test Note for the Best Laid Plans by john-bnb",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z",
+                            "auditEmail": "user@email.com"
+                        },
+                        {
+                            "type": "buyerComments",
+                            "text": "Buyer Comment note for sku: 034549119X",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z"
+                        },
+                        {
+                            "type": "promoNote",
+                            "text": "promo note for sku: 034549119X",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z"
+                        },
+                        {
+                            "type": "allocationNote",
+                            "text": "alloc note for sku: 034549119X",
+                            "createdDate": "2012-04-23T18:25:43.511Z",
+                            "updatedDate": "2012-04-23T18:25:43.511Z"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        //--------------------------------------------------------------------------------------------------------//
+        // Setting up values for first item in collection
+        //--------------------------------------------------------------------------------------------------------//
+        jsonTitles.titles[0].ean = document.getElementById("jean").value;
+        jsonTitles.titles[0].patternEAN = document.getElementById("jpatternEAN").value;
+        jsonTitles.titles[0].publisherEstimate = document.getElementById("jpublisherEstimate").value;
+
+        // Set current date as Test data  
+        var today = new Date();
+
+        // Set the values for Shared Note
+        var sharedNote = jsonTitles.titles[0].notes[0];
+        sharedNote.text = document.getElementById("jsharedNote").value;
+        sharedNote.createdDate = today;
+        sharedNote.updatedDate = today;
+
+        // Set the values for Buyer Comments.
+        var buyerComments = jsonTitles.titles[0].notes[1];
+        buyerComments.createdDate = today;
+        buyerComments.updatedDate = today;
+
+        // Set the values for Promo Note
+        var promoNote = jsonTitles.titles[0].notes[2];
+        promoNote.text = document.getElementById("jpromoNote").value;
+        promoNote.createdDate = today;
+        promoNote.updatedDate = today;
+
+        // Set the values for Allocation Note
+        var allocationNote = jsonTitles.titles[0].notes[3];
+        allocationNote.text = document.getElementById("jallocationNote").value;
+        allocationNote.createdDate = today;
+        allocationNote.updatedDate = today;
+        
+        //--------------------------------------------------------------------------------------------------------//
+        // Setting up values for the second item in collection
+        //--------------------------------------------------------------------------------------------------------//
+        jsonTitles.titles[1].ean = document.getElementById("jean2").value;
+        jsonTitles.titles[1].patternEAN = document.getElementById("jpatternEAN2").value;
+        jsonTitles.titles[1].publisherEstimate = document.getElementById("jpublisherEstimate2").value;
+
+        // Set the values for Shared Note
+        var sharedNote2 = jsonTitles.titles[1].notes[0];
+        sharedNote2.text = document.getElementById("jsharedNote2").value;
+        sharedNote2.createdDate = today;
+        sharedNote2.updatedDate = today;
+
+        // Set the values for Buyer Comments.
+        var buyerComments2 = jsonTitles.titles[1].notes[1];
+        buyerComments2.createdDate = today;
+        buyerComments2.updatedDate = today;
+
+        // Set the values for Promo Note
+        var promoNote2 = jsonTitles.titles[1].notes[2];
+        promoNote2.text = document.getElementById("jpromoNote2").value;
+        promoNote2.createdDate = today;
+        promoNote2.updatedDate = today;
+
+        // Set the values for Allocation Note
+        var allocationNote2 = jsonTitles.titles[1].notes[3];
+        allocationNote2.text = document.getElementById("jallocationNote2").value;
+        allocationNote2.createdDate = today;
+        allocationNote2.updatedDate = today;
+        
+        // Finally lets set the value of the hidden variable "titles". We need to convert the JSONNotes object to string.
+        document.getElementById("jtitles").value = JSON.stringify(jsonTitles.titles);
+
+
     }    
 </script>
